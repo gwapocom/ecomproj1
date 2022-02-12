@@ -16,11 +16,11 @@ if(Session::has('user'))
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
 
       <li class="">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link" href="myorders">Orders</a>
       </li>
 
       <form action="/search" class="form-inline my-2 my-lg-0">
@@ -31,7 +31,7 @@ if(Session::has('user'))
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
-    	<li><a href="">cart({{ $total }})</a></li>
+    	<li><a href="/cartlist">cart({{ $total }})</a></li>
       @if(Session::has('user'))
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ Session::get('user')['name'] }}
@@ -43,6 +43,7 @@ if(Session::has('user'))
       </li>
       @else
             <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
 
       @endif 
     </ul>
